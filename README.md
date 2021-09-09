@@ -64,7 +64,7 @@ Ctrl + o
 (Enter Key)
 Ctrl + x 
 ```
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](apache-conf.png?raw=true "Apache conf")
 
 
 #### Need to change db connection address at webserver node
