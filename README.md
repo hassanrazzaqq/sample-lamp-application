@@ -6,71 +6,55 @@ and deployment of high performance web applications which require a solid and re
 
 ```
 sudo apt-get update
+sudo apt install git
+
 ```
+### Install Apache
+```
+sudo apt-get install apache2
+sudo service apache2 start
 
+```
+### Install Mysql
+```
+sudo apt-get install mysql-server mysql-client
 
-####################################
-
+```
+### Install PHP
+```
+sudo apt install php libapache2-mod-php php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-zip php-curl
+```
 
 # Deploying SAMPLE LAMP APPLICATION
 
 This repository contains sample web applications
 
-
-### Setup Databases
-* We are using Mysql as the database, so you need to Install MySQL and Configure MySQL properly.
-* Install git and clone the repository.
+### Cloning GIT Repository
+```
+git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
+```
+### Setting up Databases
 * The *.sql files are located in the mySqlDB folder.
-* Create two databases and name it "bookstore" and "moviedb", set collation to "utf8_unicode_ci";
+* Create two databases and name it "bookstore" and "moviedb"
+
+```
+$ mysql -h localhost -u mysql_user -p
+
+mysql> create database bookstore;
+mysql> create database moviedb;
+mysql> exit;
+```
 * "Import" the "mySqlDB/movieDB.sql" and "mySqlDB/bookDB.sql" files, it will create the tables and populate the tables with initial data.
-You can use phpmyadmin to import or you can do it from the terminal
+
 ```
-mysql -u <username> -p <databasename> < <filename.sql>
+mysql -u mysql_user -p bookstore < mySqlDB/bookDB.sql
+mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
+
 ```
 
-
-### Setup WebApplication
-* You have to install Apache2 and PHP and configure it.
-* Install git and clone the repository.
+### Setting up Webserver (Apache2)
 * In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root". In Ubuntu 16.04, this directory is located at /var/www/html/ -- copy the git source code inside it. Folder Structure will be like below.
-```
-ubuntu@mywebserver:/var/www/html$ tree
-.
-├── admin_area
-│   ├── insertbook.php
-│   ├── insert_books.php
-│   ├── insertmovie.php
-│   └── insert_movies.php
-├── books
-│   ├── functions
-│   │   ├── fetch.php
-│   │   ├── functions.php
-│   │   └── getbook.php
-│   ├── home.php
-│   ├── images
-│   │   └── background_image.jpg
-│   └── includes
-│       └── bookDatabase.php
-├── homePage.JPG
-├── index.php
-├── movies
-│   ├── functions
-│   │   ├── fetch.php
-│   │   ├── functions.php
-│   │   └── getmovie.php
-│   ├── home.php
-│   ├── images
-│   │   └── background_image.jpg
-│   └── includes
-│       └── movieDatabase.php
-├── mySqlDB
-│   ├── bookDB.sql
-│   └── movieDB.sql
-├── README.md
-└── siteImages
-    ├── books.jpg
-    └── movies.jpg
-```   
+
 
 #### Need to change db connection address at webserver node
 Finally, you have to access the database from the webapplication.
