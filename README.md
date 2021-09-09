@@ -35,10 +35,15 @@ git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
 ```
 ### Setting up Databases
 * The *.sql files are located in the mySqlDB folder.
+* Create mysql custom user
 * Create two databases and name it "bookstore" and "moviedb"
 
 ```
-$ mysql -h localhost -u mysql_user -p
+$ sudo mysql
+
+mysql> CREATE USER 'mysql_user'@'%' IDENTIFIED BY 'mysql_user';
+mysql> GRANT ALL PRIVILEGES ON * . * TO 'mysql_user'@'%';
+mysql> FLUSH PRIVILEGES;
 
 mysql> create database bookstore;
 mysql> create database moviedb;
@@ -51,6 +56,9 @@ mysql -u mysql_user -p bookstore < mySqlDB/bookDB.sql
 mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 
 ```
+
+### Updating Database Credentials
+
 
 ### Setting up Webserver (Apache2)
 * In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root". In Ubuntu 16.04, this directory is located at /var/www/html/ -- copy the git source code inside it. Folder Structure will be like below.
