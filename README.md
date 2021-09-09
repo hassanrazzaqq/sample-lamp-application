@@ -1,10 +1,21 @@
-# phpMySQLapp
-A sample LAMP based web service stack.
+# Installing LAMP Server on Ubuntu
+
 LAMP stack is a popular open source web platform commonly used to run dynamic web sites and servers. 
 It includes Linux, Apache, MySQL, and PHP and is considered by many the platform of choice for development 
 and deployment of high performance web applications which require a solid and reliable foundation.
 
-![Alt text](https://github.com/Anirban2404/phpMySQLapp/blob/master/homePage.JPG "Screen Shot")
+```
+sudo apt-get update
+```
+
+
+####################################
+
+
+# Deploying SAMPLE LAMP APPLICATION
+
+This repository contains sample web applications
+
 
 ### Setup Databases
 * We are using Mysql as the database, so you need to Install MySQL and Configure MySQL properly.
@@ -16,6 +27,7 @@ You can use phpmyadmin to import or you can do it from the terminal
 ```
 mysql -u <username> -p <databasename> < <filename.sql>
 ```
+
 
 ### Setup WebApplication
 * You have to install Apache2 and PHP and configure it.
