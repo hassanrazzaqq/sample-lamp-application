@@ -7,18 +7,15 @@ and deployment of high performance web applications which require a solid and re
 ```
 sudo apt-get update
 sudo apt install git
-
 ```
 ### Install Apache
 ```
 sudo apt-get install apache2
 sudo service apache2 start
-
 ```
 ### Install Mysql
 ```
 sudo apt-get install mysql-server mysql-client
-
 ```
 ### Install PHP
 ```
@@ -27,7 +24,7 @@ sudo apt install php libapache2-mod-php php-common php-mbstring php-xmlrpc php-s
 
 # Deploying SAMPLE LAMP APPLICATION
 
-This repository contains sample web applications
+This repository contains php based applications, which is connected to mysql database, that is used to store and view books and movies data.
 
 ### Cloning GIT Repository
 ```
@@ -54,11 +51,7 @@ mysql> exit;
 ```
 mysql -u mysql_user -p bookstore < mySqlDB/bookDB.sql
 mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
-
 ```
-
-### Updating Database Credentials
-
 
 ### Setting up Webserver (Apache2)
 * In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root". In Ubuntu 16.04, this directory is located at /var/www/html/ -- copy the git source code inside it. Folder Structure will be like below.
@@ -75,13 +68,6 @@ Ctrl + x
 ![Alt text](apache-conf.png?raw=true "Apache conf")
 
 
-#### Need to change db connection address at webserver node
-Finally, you have to access the database from the webapplication.
-You have to change the database access endoints in books/includes/bookDatabase.php and movies/includes/movieDatabase.php.
-```
-sudo sed -i -e 's/127.0.0.1/<<ip_address>>/g' /var/www/html/books/includes/bookDatabase.php 
-```
-```
-sudo sed -i -e 's/127.0.0.1/<<ip_address>>/g' /var/www/html/movies/includes/movieDatabase.php
-```
-The default username is root and password is admin, if you change that make sure you also change it in books/includes/bookDatabase.php and movies/includes/movieDatabase.php.
+### Supporting links
+#### Nano Editor
+http://staffwww.fullcoll.edu/sedwards/nano/UsefulNanoKeyCommands.html
