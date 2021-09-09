@@ -55,6 +55,17 @@ mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 ### Setting up Webserver (Apache2)
 * In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root". In Ubuntu 16.04, this directory is located at /var/www/html/ -- copy the git source code inside it. Folder Structure will be like below.
 
+```
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+Replace DocumentRoot Path with your cloned path "/var/www/sample-lamp-application"
+
+Ctrl + o 
+(Enter Key)
+Ctrl + x 
+```
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
 
 #### Need to change db connection address at webserver node
 Finally, you have to access the database from the webapplication.
