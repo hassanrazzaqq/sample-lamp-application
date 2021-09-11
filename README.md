@@ -38,7 +38,7 @@ sudo git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
 
 ```
 mysql -u root -p
-< Enter password used at time of installation>
+<Enter password used at time of installation>
 
 mysql> CREATE USER 'mysql_user'@'%' IDENTIFIED BY 'mysql_user';
 mysql> GRANT ALL PRIVILEGES ON * . * TO 'mysql_user'@'%';
@@ -51,7 +51,9 @@ mysql> exit;
 * "Import" the "mySqlDB/movieDB.sql" and "mySqlDB/bookDB.sql" files, it will create the tables and populate the tables with initial data.
 
 ```
-mysql -u mysql_user -p bookstore < mySqlDB/bookDB.sql
+cd /var/www/sample-lamp-application
+mysql -u mysql_user -p bookstore < mySqlDB/bookDB.sql 
+<Enter password of mysql_user on prompt>
 mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 ```
 
