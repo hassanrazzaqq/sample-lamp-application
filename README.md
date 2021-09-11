@@ -29,7 +29,7 @@ This repository contains php based applications, which is connected to mysql dat
 ### Cloning GIT Repository
 ```
 cd /var/www/
-git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
+sudo git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
 ```
 ### Setting up Databases
 * The *.sql files are located in the mySqlDB folder.
@@ -37,7 +37,8 @@ git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
 * Create two databases and name it "bookstore" and "moviedb"
 
 ```
-$ sudo mysql
+mysql -u root -p
+< Enter password used at time of installation>
 
 mysql> CREATE USER 'mysql_user'@'%' IDENTIFIED BY 'mysql_user';
 mysql> GRANT ALL PRIVILEGES ON * . * TO 'mysql_user'@'%';
