@@ -28,6 +28,7 @@ This repository contains php based applications, which is connected to mysql dat
 
 ### Cloning GIT Repository
 ```
+cd /var/www/
 git clone https://github.com/hassanrazzaqq/sample-lamp-application.git
 ```
 ### Setting up Databases
