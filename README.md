@@ -61,6 +61,7 @@ mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 * In order for Apache to find the file and serve it correctly, it must be saved to a very specific directory, which is called the "web root". In Ubuntu 16.04, this directory is located at /var/www/html/ -- copy the git source code inside it. Folder Structure will be like below.
 
 ```
+sudo chown -R www-data:www-data /var/www/sample-lamp-application
 sudo nano /etc/apache2/sites-available/000-default.conf
 
 Replace DocumentRoot Path with your cloned path "/var/www/sample-lamp-application"
