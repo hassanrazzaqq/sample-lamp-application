@@ -63,12 +63,22 @@ mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 ```
 sudo chown -R www-data:www-data /var/www/sample-lamp-application
 sudo nano /etc/apache2/sites-available/000-default.conf
-sudo service apache2 restart
 Replace DocumentRoot Path with your cloned path "/var/www/sample-lamp-application"
-
 Ctrl + o 
 (Enter Key)
 Ctrl + x 
+
+sudo nano /etc/apache2/apache2.conf
+
+* add below lines in the file, should be look like below
+
+<FilesMatch \.php$> 
+SetHandler application/x-httpd-php
+​</FilesMatch>
+
+sudo a2dismod mpm_event && sudo a2enmod mpm_prefork && sudo a2enmod php7.0
+sudo service apache2 restart
+
 ```
 ![Alt text](apache-conf.png?raw=true "Apache conf")
 
