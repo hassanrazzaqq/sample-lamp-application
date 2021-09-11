@@ -63,7 +63,7 @@ mysql -u mysql_user -p moviedb < mySqlDB/movieDB.sql
 ```
 sudo chown -R www-data:www-data /var/www/sample-lamp-application
 sudo nano /etc/apache2/sites-available/000-default.conf
-
+sudo service apache2 restart
 Replace DocumentRoot Path with your cloned path "/var/www/sample-lamp-application"
 
 Ctrl + o 
