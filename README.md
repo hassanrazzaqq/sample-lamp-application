@@ -80,6 +80,7 @@ sudo a2dismod mpm_event && sudo a2enmod mpm_prefork && sudo a2enmod php7.0
 sudo service apache2 restart
 
 ```
+![Alt text](handler-conf.png?raw=true "Handler conf")
 ![Alt text](apache-conf.png?raw=true "Apache conf")
 
 
