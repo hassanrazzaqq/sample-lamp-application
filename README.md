@@ -83,6 +83,13 @@ sudo service apache2 restart
 ![Alt text](apache-conf.png?raw=true "Apache conf")
 
 
+### Expected Outcomes
+
+Open your favorite browser and type "localhost", the expected outcome should be resembles to below snapshot
+
+![Alt text](outcome.png?raw=true "outcome")
+
+
 ### Supporting links
 #### Nano Editor
 http://staffwww.fullcoll.edu/sedwards/nano/UsefulNanoKeyCommands.html
